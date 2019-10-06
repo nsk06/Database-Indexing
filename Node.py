@@ -1,14 +1,14 @@
 class Node:
     '''This is the node class'''
-    def __init__(self):
-        self.capacity = 3
+    def __init__(self,cap):
+        self.capacity = cap
         self.keys = []
         self.pointers = []
         self.leafcheck = True
         self.right_node = None
 
     def nodesplit(self):
-        mynewnode = Node()
+        mynewnode = Node(self.capacity)
         mid = len(self.keys)//2
         midpoint = self.keys[mid]
         if self.leafcheck == True:
