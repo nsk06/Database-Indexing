@@ -1,4 +1,4 @@
-# Indexing-
+# Database Indexing
 ## Part a) B+ Trees
 - Node.py contains the node class for tree and Btree.py contains the code for Btree
 #### Running Instructions
