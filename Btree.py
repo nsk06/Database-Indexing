@@ -50,8 +50,6 @@ class Btree:
             else:
                 insertnode.keys.insert(pos,splitcheck)
                 insertnode.pointers.insert(pos+1,mynewnode)
-            # insertnode.keys[pos] = splitcheck
-            # insertnode.pointers[pos+1] = mynewnode
             if(len(insertnode.keys) > insertnode.capacity):
                 midpoint,mynewnode = insertnode.nodesplit()
                 return mynewnode,midpoint
@@ -87,23 +85,17 @@ class Btree:
         else:
             if not startnode.right_node :
                 right_node = None     
-                # print("test")
                
             else:
                 right_node = startnode.right_node
-                # print("YOYO",right_node.keys)
-                # sys.exit(1)
 
         
         return ret,right_node
     def rangeinitialise(self,mymin,mymax):
-        # print(mymin,mymax)
         start_node = self.findnode(mymin,self.treeroot)
         res = 0
-        # print("test2",start_node.right_node)
         count,right_node = self.rangecount(mymin,mymax,start_node)
         res += count
-        # print("kidhr",right_node)
         while right_node != None:
             count,right_node = self.rangecount(mymin,mymax,right_node)
             res += count
@@ -145,13 +137,10 @@ def main():
         for i in lines:
             commands.append(i.split())
     out = []
-    # print(commands)
     for c in commands:
-        # print(c)
         ret = runtests(c)
         if(ret!=-1):
             out.append(ret)
-            # print("Answer is ",ret)
     for o in out:
         print(o)
 
