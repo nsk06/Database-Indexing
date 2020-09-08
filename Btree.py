@@ -16,10 +16,6 @@ class Btree:
             tempnode.pointers.append(mynewnode)
             tempnode.leafcheck = False
             self.treeroot = tempnode
-        # print("*******************",self.treeroot.keys,self.treeroot.pointers)
-        # for i in self.treeroot.pointers:
-        #     print (i.keys)
-        
     
     def keyinsert(self,query,insertnode):
         splitcheck = None
